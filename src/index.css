@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ReSURE Suffolk Consulting Design System
+   Primary: Teal #006C71 → HSL(182, 100%, 22%)
+   Accent: Orange #F1912A → HSL(29, 88%, 55%)
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 182 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 182 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 182 50% 10%;
+
+    --primary: 182 100% 22%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 182 30% 95%;
+    --secondary-foreground: 182 100% 22%;
+
+    --muted: 182 20% 96%;
+    --muted-foreground: 182 20% 40%;
+
+    --accent: 29 88% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 182 20% 90%;
+    --input: 182 20% 90%;
+    --ring: 182 100% 22%;
+
+    --radius: 0.5rem;
+
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(182, 100%, 22%), hsl(182, 80%, 30%));
+    --gradient-accent: linear-gradient(135deg, hsl(29, 88%, 55%), hsl(29, 90%, 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(182, 100%, 22%) 0%, hsl(182, 80%, 28%) 50%, hsl(182, 60%, 35%) 100%);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 182 50% 10%;
+    --sidebar-primary: 182 100% 22%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 29 88% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 182 20% 90%;
+    --sidebar-ring: 182 100% 22%;
+  }
+
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
