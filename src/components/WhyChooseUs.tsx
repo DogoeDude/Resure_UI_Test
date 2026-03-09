@@ -11,8 +11,8 @@ const reasons = [
   },
   {
     icon: Award,
-    title: "Swiss Precision",
-    description: "Headquartered in Switzerland, bringing renowned quality and meticulous attention to detail.",
+    title: "Precision",
+    description: "Headquartered in Switzerland. An independent consultancy founded on principles of excellence, transparency, and regulatory expertise.",
   },
   {
     icon: Lightbulb,

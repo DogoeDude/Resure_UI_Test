@@ -30,22 +30,56 @@ const Contact = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate form submission - in production, this would send to an API
-        await new Promise((resolve) => setTimeout(resolve, 1000));
+        // Simple Direct Email sending via FormSubmit.co
+        // Note: The first time you send this, you will get a confirmation email from FormSubmit to activate it.
+        const recipient = "rsuffolk@resure-consult.com";
+        const formSubmitUrl = `https://formsubmit.co/ajax/${recipient}`;
 
-        toast({
-            title: "Message Sent!",
-            description: "We'll get back to you as soon as possible.",
-        });
+        try {
+            const response = await fetch(formSubmitUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    _subject: `New Contact Form Submission: ${formData.subject}`,
+                    _template: "table",
+                    _captcha: "false", // Keeps it simple, though you can enable it later if you get spam
+                }),
+            });
 
-        setFormData({
-            name: "",
-            email: "",
-            company: "",
-            subject: "",
-            message: "",
-        });
-        setIsSubmitting(false);
+            if (response.ok) {
+                toast({
+                    title: "Message Sent Successfully!",
+                    description: "Thank you for reaching out. We'll get back to you soon.",
+                    variant: "default",
+                });
+                setFormData({
+                    name: "",
+                    email: "",
+                    company: "",
+                    subject: "",
+                    message: "",
+                });
+            } else {
+                toast({
+                    title: "Submission Failed",
+                    description: "There was an error sending your message. Please try again.",
+                    variant: "destructive",
+                });
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            toast({
+                title: "Error",
+                description: "Something went wrong. Please check your connection and try again.",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -108,13 +142,14 @@ const Contact = () => {
 
                                         <div className="grid sm:grid-cols-2 gap-4">
                                             <div className="space-y-2">
-                                                <Label htmlFor="company">Company</Label>
+                                                <Label htmlFor="company">Company *</Label>
                                                 <Input
                                                     id="company"
                                                     name="company"
                                                     placeholder="Your Company"
                                                     value={formData.company}
                                                     onChange={handleChange}
+                                                    required
                                                     className="bg-background"
                                                 />
                                             </div>
@@ -180,7 +215,7 @@ const Contact = () => {
                                     <div className="space-y-6">
                                         <div className="flex items-start gap-4">
                                             <a
-                                                href="mailto:contact@resure.ch"
+                                                href="mailto:rsuffolk@resure-consult.com"
                                                 className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
                                             >
                                                 <Mail className="h-5 w-5 text-primary" />
@@ -190,7 +225,7 @@ const Contact = () => {
                                                     Email
                                                 </h3>
                                                 <p className="text-muted-foreground">
-                                                    contact@resure.ch
+                                                    rsuffolk@resure-consult.com
                                                 </p>
                                             </div>
                                         </div>
@@ -247,7 +282,11 @@ const Contact = () => {
                                             variant="outline"
                                             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
                                         >
-                                            <a href="mailto:contact@resure.ch">
+                                            <a
+                                                href="https://mail.google.com/mail/?view=cm&fs=1&to=rsuffolk@resure-consult.com"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
                                                 <Mail className="h-4 w-4 mr-2" />
                                                 Email Us Directly
                                             </a>

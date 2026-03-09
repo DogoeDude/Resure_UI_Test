@@ -14,7 +14,7 @@ const features = [
   },
   {
     icon: LineChart,
-    title: "Efficiency Analytics",
+    title: "Efficienct Analytics",
     description: "Data-driven insights to optimize your regulatory operations and reduce time-to-market.",
   },
   {

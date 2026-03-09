@@ -8,13 +8,13 @@ const industries = [
     title: "Pharmaceutical Industry",
     description:
       "Drug safety, legal documentation, health authority standards, and market authorization support for global pharmaceutical compliance.",
-    features: ["Drug Registration", "Pharmacovigilance", "Regulatory Documentation", "Compliance Audits"],
+    features: ["API", "Excipients", "Finished Product Registration", "Regulatory Documentation", "Compliance Audits"],
   },
   {
     icon: Apple,
     title: "Food Industry",
     description:
-      "Comprehensive consulation on safety standards, labeling regulations, and international food compliance requirements.",
+      "Comprehensive consultation on safety standards, registration and labeling regulations.",
     features: ["Safety Compliance", "Labeling Regulations", "Quality Management", "International Standards"],
   },
   {
@@ -22,7 +22,7 @@ const industries = [
     title: "Feed Industry",
     description:
       "Expert guidance on animal nutrition regulatory requirements and agricultural product compliance across global markets.",
-    features: ["Nutrition Standards", "Product Registration", "Agricultural Compliance", "Feed Safety"],
+    features: ["Nutrition Standards", "Product Registration", "Feed Safety"],
   },
 ];
 
