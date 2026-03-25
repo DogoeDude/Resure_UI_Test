@@ -37,12 +37,12 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/services"
+                <a
+                  href="#services"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Services
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-primary-foreground/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/60">
-              © {new Date().getFullYear()} ReSURE Suffolk Consulting GmbH. All rights reserved.
+              © {new Date().getFullYear()} ReSURE Suffolk Consulting . All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <a

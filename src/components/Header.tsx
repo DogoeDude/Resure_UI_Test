@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Mail, Menu } from "lucide-react";
 import {
@@ -12,10 +12,7 @@ import {
 import { useState } from "react";
 
 const Header = () => {
-  const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm transition-all duration-300">
@@ -43,28 +40,30 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
-            {["/", "/services"].map((path) => (
-              <Link
-                key={path}
-                to={path}
-                className={`relative text-base font-medium transition-colors hover:text-primary py-2 ${isActive(path) ? "text-primary" : "text-muted-foreground"
-                  }`}
+            {[
+              { path: "#", label: "Home" },
+              { path: "#services", label: "Services" },
+              { path: "#ai", label: "AI Solutions" },
+              { path: "#process", label: "Process" },
+              { path: "#credibility", label: "About" }
+            ].map((item) => (
+              <a
+                key={item.path}
+                href={item.path}
+                className="relative text-base font-medium transition-colors hover:text-primary py-2 text-muted-foreground"
               >
-                {path === "/" ? "Home" : "Services"}
-                {isActive(path) && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent rounded-full animate-fadeIn" />
-                )}
-              </Link>
+                {item.label}
+              </a>
             ))}
           </nav>
 
           {/* CTA & Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
-            <Button asChild variant="accent">
-              <Link to="/contact">
+            <Button asChild variant="accent" className="rounded-full border-2 border-accent/80 px-5 py-2 text-sm hover:scale-105 transition-all duration-300 shadow-sm shadow-accent/20">
+              <a href="#contact">
                 <Mail className="h-4 w-4 mr-2" />
                 Contact Us
-              </Link>
+              </a>
             </Button>
           </div>
 
@@ -84,26 +83,31 @@ const Header = () => {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-4">
-                  {["/", "/services"].map((path) => (
-                    <Link
-                      key={path}
-                      to={path}
+                  {[
+                    { path: "#", label: "Home" },
+                    { path: "#services", label: "Services" },
+                    { path: "#ai", label: "AI Solutions" },
+                    { path: "#process", label: "Process" },
+                    { path: "#credibility", label: "About" }
+                  ].map((item) => (
+                    <a
+                      key={item.path}
+                      href={item.path}
                       onClick={() => setIsOpen(false)}
-                      className={`text-lg font-medium transition-colors hover:text-primary ${isActive(path) ? "text-primary" : "text-muted-foreground"
-                        }`}
+                      className="text-lg font-medium transition-colors hover:text-primary text-muted-foreground"
                     >
-                      {path === "/" ? "Home" : "Services"}
-                    </Link>
+                      {item.label}
+                    </a>
                   ))}
                   <div className="h-px bg-border my-2" />
-                  <Link
-                    to="/contact"
+                  <a
+                    href="#contact"
                     onClick={() => setIsOpen(false)}
                     className="flex items-center justify-center gap-2 text-lg font-medium bg-accent text-accent-foreground p-3 rounded-lg hover:bg-accent/90 transition-colors"
                   >
                     <Mail className="h-5 w-5" />
                     Contact Us
-                  </Link>
+                  </a>
                 </nav>
               </SheetContent>
             </Sheet>

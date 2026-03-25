@@ -26,23 +26,22 @@ const credentials = [
 
 const CredibilitySection = () => {
   return (
-    <section className="py-16 sm:py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
+    <section id="credibility" className="py-12 lg:py-24 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-12">
           <MotionWrapper animation="fadeIn">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-                Built on Precision
-              </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                A trusted consultancy founded on principles of excellence, transparency, and regulatory expertise.
-              </p>
-            </div>
+            <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
+              Built on Precision
+            </h2>
+            <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+              A trusted consultancy founded on principles of excellence, transparency, and regulatory expertise.
+            </p>
           </MotionWrapper>
+        </div>
 
           {/* Credentials Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {credentials.map((credential, index) => (
               <MotionWrapper
                 key={index}
@@ -51,18 +50,17 @@ const CredibilitySection = () => {
                 className="h-full"
               >
                 <div
-                  className="flex flex-col items-center text-center p-6 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors duration-200 h-full border border-border/50"
+                  className="flex flex-col items-center text-center p-5 rounded-xl bg-card border border-primary/10 shadow-sm hover:shadow-md transition-all duration-300 h-full group"
                 >
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                    <credential.icon className="w-6 h-6 text-primary" />
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                    <credential.icon className="w-5 h-5 lg:w-6 lg:h-6 text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground mb-1">{credential.label}</p>
-                  <p className="font-semibold text-foreground">{credential.value}</p>
+                  <p className="text-xs font-medium text-muted-foreground mb-1">{credential.label}</p>
+                  <p className="text-sm lg:text-base font-semibold text-foreground leading-snug break-words">{credential.value}</p>
                 </div>
               </MotionWrapper>
             ))}
           </div>
-        </div>
       </div>
     </section>
   );

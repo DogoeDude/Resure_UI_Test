@@ -2,11 +2,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import CredibilitySection from "@/components/CredibilitySection";
-import IndustryCards from "@/components/IndustryCards";
 import AISection from "@/components/AISection";
-import WhyChooseUs from "@/components/WhyChooseUs";
 
 import BackgroundVectors from "@/components/BackgroundVectors";
+import ServicesSection from "@/components/ServicesSection";
+import ProcessSection from "@/components/ProcessSection";
+import ContactSection from "@/components/ContactSection";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -15,14 +17,16 @@ const Index = () => {
       <Header />
       <main className="relative z-10">
         <HeroSection />
-        <IndustryCards />
+        <ServicesSection />
         <AISection />
-        <WhyChooseUs />
+        <ProcessSection />
         <CredibilitySection />
+        <ContactSection />
       </main>
       <div className="relative z-10">
         <Footer />
       </div>
+      <ScrollToTop />
     </div>
   );
 };

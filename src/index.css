@@ -58,6 +58,11 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Account for the sticky header height so it doesn't cover content */
+    scroll-padding-top: 7rem;
+  }
   * {
     @apply border-border;
   }
