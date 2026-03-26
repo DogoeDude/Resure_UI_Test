@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 import MotionWrapper from "@/components/MotionWrapper";
 import ReSureHD from "@/assets/ReSURE_HD.png";
 import { ArrowRight, Sparkles, Zap, ShieldCheck, TrendingDown } from "lucide-react";
@@ -12,10 +13,67 @@ const highlights = [
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center bg-background overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+      {/* Background Pattern & Dynamic Vectors */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Animated Glow Buffers */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }} />
+        
+        {/* Floating Vectors */}
+        <motion.div 
+            animate={{ 
+                y: [0, -20, 0], 
+                rotate: [0, 5, 0],
+                opacity: [0.05, 0.08, 0.05] 
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[15%] left-[5%] text-primary/10"
+        >
+            <Sparkles className="h-12 w-12" />
+        </motion.div>
+
+        <motion.div 
+            animate={{ 
+                x: [0, 30, 0], 
+                rotate: [0, -10, 0] 
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[40%] right-[10%] text-accent/10"
+        >
+            <Zap className="h-16 w-16" />
+        </motion.div>
+
+        <motion.div 
+            animate={{ 
+                y: [0, 40, 0], 
+                scale: [1, 1.1, 1] 
+            }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute bottom-[20%] left-[15%] text-primary/10"
+        >
+            <ShieldCheck className="h-20 w-20" />
+        </motion.div>
+
+        <motion.div 
+            animate={{ 
+                x: [-20, 20, -20], 
+                opacity: [0.03, 0.06, 0.03] 
+            }}
+            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[60%] left-[40%] text-accent/5"
+        >
+            <TrendingDown className="h-24 w-24" />
+        </motion.div>
+
+        {/* Decorative Grid Lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 pt-24 pb-12 lg:pt-32 lg:pb-16 relative z-10">
