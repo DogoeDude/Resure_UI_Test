@@ -75,17 +75,7 @@ const ServicesSection = () => {
       {/* Industry Services */}
       <div className="pb-12 lg:pb-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-10 lg:mb-12">
-            <MotionWrapper animation="fadeIn">
-              <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-                Regulatory Affairs & Compliance
-              </h2>
-              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed">
-                Expert guidance across three major industries, ensuring your products
-                meet all regulatory requirements for market access.
-              </p>
-            </MotionWrapper>
-          </div>
+
 
           {/* Pharmaceutical */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 items-center">

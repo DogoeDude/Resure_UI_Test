@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 import { Mail, MapPin, Linkedin } from "lucide-react";
 
 import ReSURELogo from "../assets/ReSURE_HD.png";
@@ -10,13 +10,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-4">
+            <a href="#" className="flex items-center gap-3 mb-4">
               <img
                 src={ReSURELogo}
                 alt="ReSURE Logo"
                 className="h-auto w-auto max-w-[200px] bg-[#F1912A] rounded-lg p-1"
               />
-            </Link>
+            </a>
             <p className="text-primary-foreground/80 text-sm max-w-md leading-relaxed">
               Regulatory Solutions for Unifying Results & Excellence.
               AI-driven regulatory affairs and compliance consulting for the pharmaceutical,
@@ -26,22 +26,46 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="font-semibold mb-6">Quick Links</h4>
+            <ul className="space-y-3">
               <li>
-                <Link
-                  to="/"
+                <a
+                  href="#"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   Home
-                </Link>
+                </a>
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="#expertise"
                   className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
-                  Services
+                  Expertise
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#ai"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  AI Solutions
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#process"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  Process
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#credibility"
+                  className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                >
+                  About
                 </a>
               </li>
             </ul>

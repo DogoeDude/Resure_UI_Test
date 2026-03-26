@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import MotionWrapper from "@/components/MotionWrapper";
 import ReSureHD from "@/assets/ReSURE_HD.png";
-import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, ShieldCheck, TrendingDown } from "lucide-react";
 
 const highlights = [
   "Pharmaceutical Regulatory Affairs",
@@ -22,10 +22,12 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Content */}
           <div className="text-primary space-y-6 lg:space-y-8 text-center lg:text-left">
-            <MotionWrapper delay={0.2} animation="fadeIn">
-              <div className="inline-flex items-center gap-2 bg-primary/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-primary/20">
-                <Sparkles className="h-3.5 w-3.5 text-accent" />
-                <span className="text-xs font-medium text-primary">AI-Powered Regulatory Excellence</span>
+            <MotionWrapper delay={0.2} animation="fadeIn" className="mb-2">
+              <div className="flex items-center gap-3 justify-center lg:justify-start">
+                <div className="h-px w-8 bg-accent/60" />
+                <span className="text-[10px] lg:text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground/80">
+                  Regulatory Excellence Redeﬁned: <span className="text-primary/70">Expert-Led Strategy & AI Integration</span>
+                </span>
               </div>
             </MotionWrapper>
 
@@ -39,9 +41,11 @@ const HeroSection = () => {
 
             <MotionWrapper delay={0.4}>
               <p className="text-base lg:text-lg text-muted-foreground max-w-lg leading-relaxed mx-auto lg:mx-0">
-                Expert consulting for pharmaceutical, food, and feed industries.
-                We combine deep regulatory expertise with cutting-edge AI solutions
-                to accelerate your path to market.
+                Strategic consulting for the pharmaceutical, food, and feed sectors.
+                We provide <span><b>comprehensive regulatory expertise</b></span> to build resilient,
+                compliance-ﬁrst strategies for your products. By integrating targeted
+                AI capabilities into our workﬂow, we enhance data precision and
+                cost-efﬁciency, ensuring a robust and defensible path to market.
               </p>
             </MotionWrapper>
 
@@ -50,7 +54,7 @@ const HeroSection = () => {
               <ul className="space-y-2 text-left mx-auto lg:mx-0 max-w-xs lg:max-w-none">
                 {highlights.map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
-                    <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
+                    <ShieldCheck className="h-4 w-4 text-accent shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -58,45 +62,49 @@ const HeroSection = () => {
             </MotionWrapper>
 
             <MotionWrapper delay={0.5}>
-              <div className="flex flex-col sm:flex-row gap-3 pt-1 justify-center lg:justify-start">
-                <Button
-                  asChild
-                  size="lg"
-                  variant="default"
-                  className="text-sm px-6 py-5 rounded-full shadow-md shadow-accent/20 hover:bg-accent hover:text-white hover:scale-105 transition-all duration-300"
-                >
-                  <a href="#services">
-                    Explore Our Services
+              <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
+                <a href="#expertise">
+                  <Button 
+                    variant="default"
+                    size="lg" 
+                    className="rounded-full px-8 h-12 text-sm font-bold border-2 border-primary bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/20 active:scale-95"
+                  >
+                    Explore Our Expertise
                     <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="bg-transparent border-2 border-primary/30 text-primary hover:bg-primary hover:text-white text-sm px-6 py-5 rounded-full hover:scale-105 transition-all duration-300"
-                >
-                  <a href="#contact">Contact Us</a>
-                </Button>
+                  </Button>
+                </a>
+                <a href="#contact">
+                  <Button 
+                    variant="accent"
+                    size="lg" 
+                    className="rounded-full px-8 h-12 text-sm font-bold border-2 border-accent bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-lg shadow-accent/20 active:scale-95"
+                  >
+                    Contact Us
+                  </Button>
+                </a>
               </div>
             </MotionWrapper>
 
-            {/* Mini stats */}
+            {/* Core Benefits with Icons */}
             <MotionWrapper delay={0.6}>
-              <div className="flex gap-8 justify-center lg:justify-start pt-2">
-                <div className="text-center lg:text-left">
-                  <p className="text-2xl font-bold text-foreground">60%</p>
-                  <p className="text-xs text-muted-foreground">Faster Compliance</p>
+              <div className="flex flex-wrap lg:flex-nowrap gap-4 lg:gap-5 justify-center lg:justify-start pt-8 pb-4">
+                <div className="flex items-center gap-3 p-3 bg-card border border-border rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group whitespace-nowrap">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Zap className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-[11px] lg:text-[12px] font-bold text-primary tracking-wide pr-2">Accelerate Compliance</span>
                 </div>
-                <div className="w-px bg-border" />
-                <div className="text-center lg:text-left">
-                  <p className="text-2xl font-bold text-foreground">3+</p>
-                  <p className="text-xs text-muted-foreground">Industries Served</p>
+                <div className="flex items-center gap-3 p-3 bg-card border border-border rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group whitespace-nowrap">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <ShieldCheck className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-[11px] lg:text-[12px] font-bold text-primary tracking-wide pr-2">Improve Accuracy</span>
                 </div>
-                <div className="w-px bg-border" />
-                <div className="text-center lg:text-left">
-                  <p className="text-2xl font-bold text-foreground">99.9%</p>
-                  <p className="text-xs text-muted-foreground">Accuracy Rate</p>
+                <div className="flex items-center gap-3 p-3 bg-card border border-border rounded-2xl hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group whitespace-nowrap">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <TrendingDown className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="text-[11px] lg:text-[13px] font-bold text-primary tracking-wide pr-2">Ensure Cost-Reduction</span>
                 </div>
               </div>
             </MotionWrapper>

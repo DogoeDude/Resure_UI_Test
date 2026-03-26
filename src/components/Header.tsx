@@ -25,7 +25,7 @@ const Header = () => {
               <img
                 src="/Circular_Logo.png"
                 alt="ReSURE Logo"
-                className="relative h-10 w-10 lg:h-14 lg:w-14 transition-transform duration-300 group-hover:scale-105"
+                className="relative h-12 w-12 lg:h-16 lg:w-16 transition-transform duration-300 group-hover:scale-110"
               />
             </div>
             <div className="flex flex-col">
@@ -42,7 +42,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
             {[
               { path: "#", label: "Home" },
-              { path: "#services", label: "Services" },
+              { path: "#expertise", label: "Expertise" },
               { path: "#ai", label: "AI Solutions" },
               { path: "#process", label: "Process" },
               { path: "#credibility", label: "About" }
@@ -59,9 +59,9 @@ const Header = () => {
 
           {/* CTA & Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
-            <Button asChild variant="accent" className="rounded-full border-2 border-accent/80 px-5 py-2 text-sm hover:scale-105 transition-all duration-300 shadow-sm shadow-accent/20">
+            <Button asChild variant="accent" className="rounded-full border-2 border-accent text-accent-foreground px-5 h-10 text-xs font-bold hover:scale-105 transition-all duration-300 shadow-md shadow-accent/20 active:scale-95">
               <a href="#contact">
-                <Mail className="h-4 w-4 mr-2" />
+                <Mail className="h-3.5 w-3.5 mr-2" />
                 Contact Us
               </a>
             </Button>
@@ -85,7 +85,7 @@ const Header = () => {
                 <nav className="flex flex-col gap-4">
                   {[
                     { path: "#", label: "Home" },
-                    { path: "#services", label: "Services" },
+                    { path: "#expertise", label: "Expertise" },
                     { path: "#ai", label: "AI Solutions" },
                     { path: "#process", label: "Process" },
                     { path: "#credibility", label: "About" }

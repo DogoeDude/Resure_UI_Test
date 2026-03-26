@@ -50,13 +50,13 @@ const CredibilitySection = () => {
                 className="h-full"
               >
                 <div
-                  className="flex flex-col items-center text-center p-5 rounded-xl bg-card border border-primary/10 shadow-sm hover:shadow-md transition-all duration-300 h-full group"
+                  className="flex flex-col items-center text-center p-8 rounded-3xl bg-card border border-border shadow-sm hover:shadow-xl transition-all duration-300 h-full group"
                 >
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
-                    <credential.icon className="w-5 h-5 lg:w-6 lg:h-6 text-primary" />
+                  <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-300">
+                    <credential.icon className="w-6 h-6 lg:w-7 lg:h-7 text-primary" />
                   </div>
-                  <p className="text-xs font-medium text-muted-foreground mb-1">{credential.label}</p>
-                  <p className="text-sm lg:text-base font-semibold text-foreground leading-snug break-words">{credential.value}</p>
+                  <p className="text-xs font-bold text-accent uppercase tracking-wider mb-2">{credential.label}</p>
+                  <p className="text-base lg:text-lg font-bold text-foreground leading-snug break-words">{credential.value}</p>
                 </div>
               </MotionWrapper>
             ))}

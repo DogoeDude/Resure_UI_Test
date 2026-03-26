@@ -178,7 +178,7 @@ const ContactSection = () => {
                                 <Button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full rounded-full border-2 border-accent bg-accent hover:bg-accent/90 text-accent-foreground hover:scale-[1.02] transition-all duration-300 py-5 text-sm font-semibold shadow-md shadow-accent/20"
+                                    className="w-full rounded-full border-2 border-accent bg-accent hover:bg-accent/90 text-accent-foreground hover:scale-[1.02] transition-all duration-300 h-11 text-sm font-bold shadow-md shadow-accent/20 active:scale-95"
                                 >
                                     {isSubmitting ? (
                                         "Sending..."
@@ -207,54 +207,54 @@ const ContactSection = () => {
                             </div>
 
                             <div className="space-y-6">
-                                <div className="flex items-start gap-4">
+                                <div className="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
                                     <a
                                         href="mailto:rsuffolk@resure-consult.com"
-                                        className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
+                                        className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
                                     >
-                                        <Mail className="h-5 w-5 text-primary" />
+                                        <Mail className="h-6 w-6 text-primary" />
                                     </a>
                                     <div>
-                                        <h4 className="font-semibold text-foreground mb-1">
+                                        <h4 className="font-bold text-foreground mb-1">
                                             Email
                                         </h4>
-                                        <p className="text-muted-foreground">
+                                        <p className="text-sm text-muted-foreground">
                                             rsuffolk@resure-consult.com
                                         </p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
+                                <div className="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
                                     <a
                                         href="tel:+41000000000"
-                                        className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
+                                        className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
                                     >
-                                        <Phone className="h-5 w-5 text-primary" />
+                                        <Phone className="h-6 w-6 text-primary" />
                                     </a>
                                     <div>
-                                        <h4 className="font-semibold text-foreground mb-1">
+                                        <h4 className="font-bold text-foreground mb-1">
                                             Phone
                                         </h4>
-                                        <p className="text-muted-foreground">
+                                        <p className="text-sm text-muted-foreground">
                                             +41 00 000 00 00
                                         </p>
                                     </div>
                                 </div>
 
-                                <div className="flex items-start gap-4">
+                                <div className="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
                                     <a
                                         href="https://www.google.com/maps/search/?api=1&query=K%C3%BCssnacht,+Switzerland"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
+                                        className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
                                     >
-                                        <MapPin className="h-5 w-5 text-primary" />
+                                        <MapPin className="h-6 w-6 text-primary" />
                                     </a>
                                     <div>
-                                        <h4 className="font-semibold text-foreground mb-1">
+                                        <h4 className="font-bold text-foreground mb-1">
                                             Office
                                         </h4>
-                                        <p className="text-muted-foreground">
+                                        <p className="text-sm text-muted-foreground">
                                             Küssnacht, Switzerland
                                         </p>
                                     </div>
@@ -274,14 +274,14 @@ const ContactSection = () => {
                                 <Button
                                     asChild
                                     variant="outline"
-                                    className="rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-sm px-6 py-4"
+                                    className="rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-xs font-bold h-10 px-5"
                                 >
                                     <a
                                         href="https://mail.google.com/mail/?view=cm&fs=1&to=rsuffolk@resure-consult.com"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <Mail className="h-4 w-4 mr-2" />
+                                        <Mail className="h-3.5 w-3.5 mr-2" />
                                         Email Us Directly
                                     </a>
                                 </Button>

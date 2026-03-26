@@ -38,24 +38,19 @@ const ProcessSection = () => {
           </MotionWrapper>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {processSteps.map((step, index) => (
-            <MotionWrapper key={step.step} delay={0.2 + index * 0.1} animation="fadeIn">
-              <div className="relative">
-                {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-border -translate-x-1/2" />
-                )}
-                <div className="text-center">
-                  <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center mx-auto mb-4 text-lg lg:text-xl font-bold relative z-10 shadow-md">
-                    {step.step}
-                  </div>
-                  <h3 className="text-base lg:text-lg font-semibold text-foreground mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
-                    {step.description}
-                  </p>
+            <MotionWrapper key={step.step} delay={0.2 + index * 0.1} animation="scaleUp">
+              <div className="group relative bg-card border border-border rounded-3xl p-8 hover:shadow-xl transition-all duration-300 h-full">
+                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center mb-6 text-xl lg:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  {step.step}
                 </div>
+                <h3 className="text-lg lg:text-xl font-bold text-foreground mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
               </div>
             </MotionWrapper>
           ))}

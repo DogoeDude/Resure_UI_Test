@@ -5,7 +5,7 @@ import CredibilitySection from "@/components/CredibilitySection";
 import AISection from "@/components/AISection";
 
 import BackgroundVectors from "@/components/BackgroundVectors";
-import ServicesSection from "@/components/ServicesSection";
+import IndustryExpertise from "@/components/IndustryExpertise";
 import ProcessSection from "@/components/ProcessSection";
 import ContactSection from "@/components/ContactSection";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -17,7 +17,7 @@ const Index = () => {
       <Header />
       <main className="relative z-10">
         <HeroSection />
-        <ServicesSection />
+        <IndustryExpertise />
         <AISection />
         <ProcessSection />
         <CredibilitySection />
