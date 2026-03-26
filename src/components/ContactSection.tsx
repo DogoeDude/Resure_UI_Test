@@ -81,28 +81,28 @@ const ContactSection = () => {
   return (
     <section id="contact" className="w-full relative z-10">
         {/* Hero Section */}
-        <div className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 to-accent/5">
+        <div className="py-10 lg:py-24 bg-gradient-to-br from-primary/5 to-accent/5">
             <div className="container mx-auto px-4 lg:px-8 text-center">
                 <MotionWrapper animation="fadeIn">
-                    <h2 className="text-2xl lg:text-3xl font-bold text-foreground mb-3">
+                    <h2 className="text-xl lg:text-3xl font-bold text-foreground mb-2">
                         Get in <span className="text-primary">Touch</span>
                     </h2>
-                    <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+                    <p className="text-sm lg:text-base text-muted-foreground max-w-2xl mx-auto">
                         Ready to transform your regulatory workflow? Our team of experts
-                        is here to help you navigate the complexities of global compliance.
+                        is here to help you navigate global compliance.
                     </p>
                 </MotionWrapper>
             </div>
         </div>
 
         {/* Contact Form & Info Section */}
-        <div className="py-16 lg:py-24">
+        <div className="py-10 lg:py-24">
             <div className="container mx-auto px-4 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
                     {/* Contact Form */}
                     <MotionWrapper animation="scaleUp" delay={0.2}>
-                        <div className="bg-card border border-border rounded-2xl p-8 lg:p-10 shadow-lg">
-                            <h3 className="text-2xl font-bold text-foreground mb-6">
+                        <div className="bg-card border border-border rounded-xl lg:rounded-2xl p-5 lg:p-10 shadow-lg h-full">
+                            <h3 className="text-lg lg:text-2xl font-bold text-foreground mb-4">
                                 Send Us a Message
                             </h3>
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -178,13 +178,13 @@ const ContactSection = () => {
                                 <Button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full rounded-full border-2 border-accent bg-accent hover:bg-accent/90 text-accent-foreground hover:scale-[1.02] transition-all duration-300 h-11 text-sm font-bold shadow-md shadow-accent/20 active:scale-95"
+                                    className="w-fit px-8 rounded-full border-2 border-accent bg-accent hover:bg-accent/90 text-accent-foreground hover:scale-[1.02] transition-all duration-300 h-9 text-[11px] font-bold shadow-md shadow-accent/20 active:scale-95"
                                 >
                                     {isSubmitting ? (
                                         "Sending..."
                                     ) : (
                                         <>
-                                            <Send className="h-4 w-4 mr-2" />
+                                            <Send className="h-3.5 w-3.5 mr-2" />
                                             Send Message
                                         </>
                                     )}
@@ -197,64 +197,60 @@ const ContactSection = () => {
                     <MotionWrapper animation="slideRight" delay={0.4}>
                         <div className="space-y-8">
                             <div>
-                                <h3 className="text-2xl font-bold text-foreground mb-6">
+                                <h3 className="text-lg lg:text-2xl font-bold text-foreground mb-3">
                                     Contact Information
                                 </h3>
-                                <p className="text-muted-foreground mb-8">
-                                    Reach out to us directly or fill out the form. We typically
-                                    respond within 24 business hours.
+                                <p className="text-xs lg:text-base text-muted-foreground mb-6">
+                                    Reach out to us directly or fill out the form. We respond within 24 hours.
                                 </p>
                             </div>
 
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
+                            <div className="space-y-4 lg:space-y-6">
+                                <div className="flex items-start gap-4 p-3.5 lg:p-4 rounded-xl lg:rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
                                     <a
                                         href="mailto:rsuffolk@resure-consult.com"
-                                        className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
+                                        className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
                                     >
-                                        <Mail className="h-6 w-6 text-primary" />
+                                        <Mail className="h-5 w-5 lg:h-6 lg:w-6 text-primary" />
                                     </a>
                                     <div>
-                                        <h4 className="font-bold text-foreground mb-1">
+                                        <h4 className="font-bold text-foreground mb-0.5 text-sm lg:text-base">
                                             Email
                                         </h4>
-                                        <p className="text-sm text-muted-foreground">
+                                        <p className="text-[13px] lg:text-sm text-muted-foreground transition-all">
                                             rsuffolk@resure-consult.com
                                         </p>
                                     </div>
                                 </div>
-
-                                <div className="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
-                                    <a
-                                        href="tel:+41000000000"
-                                        className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
-                                    >
-                                        <Phone className="h-6 w-6 text-primary" />
-                                    </a>
+ 
+                                <div className="flex items-start gap-4 p-3.5 lg:p-4 rounded-xl lg:rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
+                                    <div className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                        <Phone className="h-5 w-5 lg:h-6 lg:w-6 text-primary" />
+                                    </div>
                                     <div>
-                                        <h4 className="font-bold text-foreground mb-1">
+                                        <h4 className="font-bold text-foreground mb-0.5 text-sm lg:text-base">
                                             Phone
                                         </h4>
-                                        <p className="text-sm text-muted-foreground">
+                                        <p className="text-[13px] lg:text-sm text-muted-foreground">
                                             +41 00 000 00 00
                                         </p>
                                     </div>
                                 </div>
-
-                                <div className="flex items-start gap-4 p-4 rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
+ 
+                                <div className="flex items-start gap-4 p-3.5 lg:p-4 rounded-xl lg:rounded-2xl bg-card border border-border hover:shadow-md transition-shadow duration-300">
                                     <a
                                         href="https://www.google.com/maps/search/?api=1&query=K%C3%BCssnacht,+Switzerland"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
+                                        className="w-12 h-12 lg:w-14 lg:h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 hover:bg-primary/20 transition-colors"
                                     >
-                                        <MapPin className="h-6 w-6 text-primary" />
+                                        <MapPin className="h-5 w-5 lg:h-6 lg:w-6 text-primary" />
                                     </a>
                                     <div>
-                                        <h4 className="font-bold text-foreground mb-1">
+                                        <h4 className="font-bold text-foreground mb-0.5 text-sm lg:text-base">
                                             Office
                                         </h4>
-                                        <p className="text-sm text-muted-foreground">
+                                        <p className="text-[13px] lg:text-sm text-muted-foreground">
                                             Küssnacht, Switzerland
                                         </p>
                                     </div>
@@ -262,26 +258,24 @@ const ContactSection = () => {
                             </div>
 
                             {/* Additional Info Card */}
-                            <div className="bg-primary/5 border border-primary/10 rounded-2xl p-6 mt-8">
-                                <h4 className="font-semibold text-foreground mb-2">
+                            <div className="bg-primary/5 border border-primary/10 rounded-xl lg:rounded-2xl p-4 lg:p-6 mt-6">
+                                <h4 className="font-semibold text-foreground mb-1.5 text-sm lg:text-base">
                                     Looking for Immediate Assistance?
                                 </h4>
-                                <p className="text-sm text-muted-foreground mb-4">
-                                    For urgent regulatory matters, please contact us directly via
-                                    phone or email. Our team is available during business hours
-                                    (CET).
+                                <p className="text-[11px] lg:text-sm text-muted-foreground mb-3">
+                                    For urgent regulatory matters, please contact us directly.
                                 </p>
                                 <Button
                                     asChild
                                     variant="outline"
-                                    className="rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-xs font-bold h-10 px-5"
+                                    className="rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:scale-105 transition-all duration-300 text-[10px] font-bold h-8 px-4"
                                 >
                                     <a
                                         href="https://mail.google.com/mail/?view=cm&fs=1&to=rsuffolk@resure-consult.com"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <Mail className="h-3.5 w-3.5 mr-2" />
+                                        <Mail className="h-3 w-3 mr-2" />
                                         Email Us Directly
                                     </a>
                                 </Button>

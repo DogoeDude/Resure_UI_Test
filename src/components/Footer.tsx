@@ -6,7 +6,7 @@ import ReSURELogo from "../assets/ReSURE_HD.png";
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 lg:px-8 py-12 lg:py-20">
+      <div className="container mx-auto px-4 lg:px-8 py-8 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
@@ -14,7 +14,7 @@ const Footer = () => {
               <img
                 src={ReSURELogo}
                 alt="ReSURE Logo"
-                className="h-auto w-auto max-w-[200px] bg-[#F1912A] rounded-lg p-1"
+                className="h-auto w-auto max-w-[120px] lg:max-w-[200px] bg-[#F1912A] rounded-lg p-1"
               />
             </a>
             <p className="text-primary-foreground/80 text-sm max-w-md leading-relaxed">
@@ -77,11 +77,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:contact@resure.ch"
+                  href="mailto:rsuffolk@resure-consult.com"
                   className="flex items-center gap-2 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                 >
                   <Mail className="h-4 w-4" />
-                  contact@resure.ch
+                  rsuffolk@resure-consult.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-primary-foreground/80">
